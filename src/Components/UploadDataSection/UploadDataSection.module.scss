@@ -1,0 +1,54 @@
+@import "../../assets/variables.scss";
+
+.UploadDataSection {
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  background-color: $main-purple;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .header {
+    display: flex;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  
+    .title {
+      align-self: center;
+      color: #fff;
+      font-size: 32px;
+      font-weight: 200;
+    }
+  }
+
+  .tableContainer {
+    background-color: #fff;
+    width: fit-content;
+    max-width: 100%;
+    height: calc(100% - 205px);
+    overflow-x: scroll;
+  }
+
+  .buttonsContainer {
+    position: absolute;
+    bottom: 25px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: calc(100% - 50px);
+
+
+    .mainButtons {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+      height: 100px;
+      gap: 10px;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.table {
+    display: block;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    margin: 0 auto;
+    white-space: nowrap;
+    border-spacing: 0;
+
+  thead {
+    height: 24px;
+    font-size: 14px;
+    font-weight: bolder;
+    display: table-header-group;
+
+    th {
+      margin: 0;
+      padding: 4px 6px;
+      border: 1px solid black;
+      border-right: 0;
+      min-width: 100px;
+      font-size: 16px;
+
+      &:last-child {
+        border-right: 2px solid black;
+      }
+      &:first-child {
+        border-left: 2px solid black;
+      }
+    }
+  }
+  tbody {
+    tr {
+      display: table-row;
+      td {
+        border: 1px solid black;
+        border-right: 0;
+        min-width: 100px;
+        font-size: 18px;
+        &:first-of-type {
+          border-left: 2px solid black;
+        }
+
+        &:last-of-type {
+          border-right: 2px solid black;
+        }
+      }
+      
+    }
+  }
+}
