@@ -11,7 +11,7 @@ export const PagesComponent: FC = () => {
     <>
       {currentPage == 'Landing' && <LandingSection />}
       {currentPage == 'Datos' && <UploadDataSection />}
-      {currentPage === "Config" && <ConfigSection />}
+      {currentPage == 'Config' && <ConfigSection />}
       {currentPage == 'Preview' && <PDFPreview />}
     </>
   )
