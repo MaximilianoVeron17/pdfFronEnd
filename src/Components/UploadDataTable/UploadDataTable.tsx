@@ -1,33 +1,39 @@
 import { FC } from "react";
 import styles from "./UploadDataTable.module.scss"
+import PersonalDataTable from "../PersonalDataTable";
+import BonificationsTable from "../BonificationsTable";
+import DiscountsTable from "../DiscountsTable";
 
-export const UploadDataTable: FC = () => {
-  const categorias = ['1', '2', '3', '4']
+export const UploadDataTable: FC<{currentTable: string}> = ({currentTable}) => {
+  const categorias = ['1', '2', '3', '4', '10']
   const tableRows = []
   for (let index = 1; index <= 100; index++) {
     tableRows.push(
       <tr>
         <td>{index}</td>
         <td>
-          <input type="text" />
+          <input type="text" placeholder="Apellido" />
         </td>
         <td>
-          <select name="" id="">
+          <input type="text" placeholder="Nombre" />
+        </td>
+        <td className={styles.categoryContainer}>
+          <select className={styles.categoryOptions} name="" id="">
             {categorias.map((categoria, index) => {
               return (
-                <option key={index} value={categoria}>{categoria}</option>
+                <option key={index} value={`Categoria ${categoria}`}>Categoria {categoria}</option>
               )
             })}
           </select>
         </td>
         <td>
-          <input type="number" />
+          <input className={styles.fechaIngreso} type="date" placeholder="Fecha Ingreso"/>
         </td>
         <td>
-          <input type="number" />
+          <input type="checkbox"/>
         </td>
         <td>
-          <input type="number" />
+          <input type="number" min={0} max={720} placeholder="Hs Extra"/>
         </td>
         <td>hola</td>
         <td>hola</td>
@@ -37,19 +43,23 @@ export const UploadDataTable: FC = () => {
 
   return (
     <table className={styles.table}>
-      <thead>
-        <th>Indice</th>
-        <th>Apellido y Nombre</th>
+      {/* <thead>
+        <th>N° Orden</th>
+        <th>Apellido</th>
+        <th>Nombre</th>
         <th>Categoria</th>
-        <th>Antigüedad</th>
-        <th>Hijos</th>
+        <th>Fecha Ingreso</th>
+        <th>Titulo</th>
         <th>Horas Extra</th>
         <th>Extras</th>
         <th>. . .</th>
-      </thead>
-      <tbody>
+      </thead> */}
+      {currentTable == 'PersonalData' && <PersonalDataTable />}
+      {currentTable == 'Bonifications' && <BonificationsTable />}
+      {currentTable == 'Descuentos' && <DiscountsTable />}
+      {/* <tbody>
         {tableRows}
-      </tbody>
+      </tbody> */}
     </table>
   )
 }

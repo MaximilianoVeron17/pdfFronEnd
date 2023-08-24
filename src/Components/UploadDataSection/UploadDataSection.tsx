@@ -1,4 +1,4 @@
-import React, { FC, useContext, useState } from "react";
+import { FC, useContext, useState } from "react";
 import {
   GlobalContext,
   GlobalContextType,
@@ -7,11 +7,11 @@ import Button from "../Button";
 import styles from "./UploadDataSection.module.scss";
 import UploadDataTable from "../UploadDataTable";
 import ModalPagina from "../UploadModalSection/UploadModalSection";
-import modalStyles from "../UploadModalSection/modal.module.scss";
 
 export const UploadDataSection: FC = () => {
   const { updateCurrentPage } = useContext(GlobalContext) as GlobalContextType;
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [currentTable, setCurrentTable] = useState<'PersonalData' | 'Bonifications' | 'Descuentos'>('PersonalData');
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -21,19 +21,40 @@ export const UploadDataSection: FC = () => {
     setIsModalOpen(false);
   };
 
+  const handleBackClick = () => {
+    if (currentTable == "PersonalData") updateCurrentPage("Landing")
+    if (currentTable == "Bonifications") setCurrentTable("PersonalData")
+    if (currentTable == "Descuentos") setCurrentTable("Bonifications")
+  }
+
+  const handleNextClick = () => {
+    if (currentTable == "PersonalData") setCurrentTable("Bonifications")
+    if (currentTable == "Bonifications") setCurrentTable("Descuentos")
+    if (currentTable == "Descuentos") updateCurrentPage("Preview")
+  }
+
+  const titles = {
+    "PersonalData": "Carga de Datos Personales",
+    "Bonifications": "Cargar Bonificaciones",
+    "Descuentos": "Cargar Descuentos"
+  }
+
   return (
     <div className={styles.UploadDataSection}>
       <section className={styles.header}>
-
+        <img src="src\assets\Muni-Benitez.png" alt="" />
+        <h2 className={styles.title}>{titles[currentTable]}</h2>
       </section>
-      <section className={styles.tableContainer}>
-        <UploadDataTable />
+      <section className={styles.tableSection}>
+        <div className={styles.tableContainer}>
+          <UploadDataTable currentTable={currentTable}/>
+        </div>
       </section>
       <section className={styles.buttonsContainer}>
         <Button
           size="14px"
           width="100px"
-          onClick={() => updateCurrentPage("Landing")}
+          onClick={handleBackClick}
         >
           {"< Atras"}
         </Button>
@@ -45,9 +66,9 @@ export const UploadDataSection: FC = () => {
             primary
             size="20px"
             width="250px"
-            onClick={() => updateCurrentPage("Preview")}
+            onClick={handleNextClick}
           >
-            {"Vista Previa"}
+            {currentTable == "Descuentos" ? "Vista Previa" : "Siguiente"}
           </Button>
         </div>
       </section>

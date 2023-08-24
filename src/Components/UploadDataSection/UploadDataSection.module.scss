@@ -15,22 +15,30 @@
     text-align: center;
     width: 100%;
     flex-direction: row;
-    justify-content: space-between;
     margin-bottom: 25px;
 
     .title {
+      position: absolute;
       align-self: center;
       color: #fff;
       font-size: 32px;
       font-weight: 200;
+      width: 100%;
     }
   }
-
+  .tableSection {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+  }
+  
   .tableContainer {
     background-color: #fff;
     width: fit-content;
     max-width: 100%;
-    height: calc(100% - 205px);
+    height: calc(95vh - 205px);
     overflow-x: scroll;
   }
 
