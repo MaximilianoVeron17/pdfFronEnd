@@ -74,13 +74,13 @@ const PDFTemplate = forwardRef(({ haberesYDescuentos, personalData, month, total
                 {haber ? haber.name : '-'}
               </td>
               <td className={styles.importe}>
-                {haber ? `$ ${haber.value}` : '$'}
+                {haber ? `$ ${haber.value.toString().replace('.', ',')}` : '$'}
               </td>
               <td>
                 {descuento ? descuento.name : '-'}
               </td>
               <td className={styles.importe}>
-                {descuento ? `$ ${descuento.value}` : '$'}
+                {descuento ? `$ ${descuento.value.toString().replace('.', ',')}` : '$'}
               </td>
             </tr>
           ))
@@ -88,9 +88,9 @@ const PDFTemplate = forwardRef(({ haberesYDescuentos, personalData, month, total
       </tbody>
       <tr className={styles.totalsRow}>
         <td className={styles.totalH}>{`TOTAL HABERES MES DE ${month} DE ${year}`}</td>
-        <td className={styles.importeTotals}>$ {totals.htotal}</td>
+        <td className={styles.importeTotals}>$ {totals.htotal.toString().replace('.', ',')}</td>
         <td>TOTAL DESCUENTOS</td>
-        <td className={styles.importeTotals}>$ {totals.dtotal}</td>
+        <td className={styles.importeTotals}>$ {totals.dtotal.toString().replace('.', ',')}</td>
       </tr>
       <tr className={styles.totalsRow}>
         <td className={styles.signs}>
@@ -103,7 +103,7 @@ const PDFTemplate = forwardRef(({ haberesYDescuentos, personalData, month, total
         </td>
         <td className={styles.netTotal}>
           <p>{"TOTAL NETO"}</p>
-          <p>$ {totals.netTotal}</p>
+          <p>$ {totals.netTotal.toString().replace('.', ',')}</p>
         </td>
       </tr>
     </table>
