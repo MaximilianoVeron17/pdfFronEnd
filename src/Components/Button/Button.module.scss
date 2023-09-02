@@ -1,0 +1,25 @@
+@import "../../assets/variables.scss";
+
+.Button {
+  padding: 6px 15px;
+  color: #FFF;
+  background-color: $secondary-blue;
+  font-weight: 200;
+  border-radius: 4px;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  height: fit-content;
+
+  &:hover {
+    background-color: $secondary-blue-hover;
+  }
+}
+
+.primary {
+  background-color: $main-blue;
+  &:hover {
+    background-color: $main-blue-hover;
+  }
+}
