@@ -1,0 +1,42 @@
+@import "../../assets/variables.scss";
+
+.LandingSectionContainer {
+  margin: auto;
+  background-color: $main-purple;
+  width: 500px;
+  max-width: 95vw;
+  height: 80vh;
+  margin-top: 5vh;
+  max-height: 650px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+}
+
+.sidebar {
+  width: 40%;
+  height: 100%;
+  max-width: 300px;
+  background-color: $main-purple;
+  display: flex;
+  flex-direction: column;
+}
+
+.space-toggle {
+  display: flex;
+  height: 100%;
+}
+
+.header {
+  text-align: center;
+  align-items: center;
+  padding: 25px 0px 10px;
+  border-bottom: 2px solid white;
+  color: white;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 28px;
+}
