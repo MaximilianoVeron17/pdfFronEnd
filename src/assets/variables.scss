@@ -1,6 +1,46 @@
-$main-purple: #120060;
-$main-gray: #474747;
+$main-purple: #0b003a;
+$main-gray: #CFCFCF;
 $main-blue: #0095D4;
 $secondary-blue: #004560;
 $main-blue-hover: #008590;
 $secondary-blue-hover: #006070;
+
+.check {
+  background-color: $main-blue-hover;
+  transition: all;
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: $main-blue;
+  }
+}
+
+.close {
+  background-color: $secondary-blue;
+  transition: all;
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: $secondary-blue-hover;
+  }
+}
+
+.edit {
+  background-color: $secondary-blue;
+  transition: all;
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: $secondary-blue-hover;
+  }
+}
+
+.delete {
+  background-color: brown;
+  transition: all;
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: rgb(185, 47, 47);
+  }
+}

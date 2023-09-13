@@ -3,6 +3,9 @@ import styles from "./ConfigSection.module.scss";
 import { GlobalContext, GlobalContextType } from "../GlobalContext/GlobalContext";
 import { ConfigNavigation } from "../ConfigNavigation/ConfigNavigation";
 import { PersonalDataConfig } from "../PersonalDataConfig/PersonalDataConfig";
+import { BonificationsConfig } from "../BonificationsConfig/BonificationsConfig";
+import { DiscountsConfig } from "../DiscountsConfig/DiscountsConfig";
+import { FamilyConfig } from "../FamilyConfig/FamilyConfig";
 
 export const ConfigSection: FC = () => {
   const {Config} = useContext(GlobalContext) as GlobalContextType;
@@ -20,11 +23,12 @@ export const ConfigSection: FC = () => {
         <h2 className={styles.header}>
           Configuracion
         </h2>
-        <ConfigNavigation options={options} handlePageChange={handlePageChange} />
+        <ConfigNavigation currentPage={currentPage} options={options} handlePageChange={handlePageChange} />
       </aside>
       {currentPage == options[0] && <PersonalDataConfig personalData={Config.personalData} bonuses={Config.bonifications.chargeBonuses} />}
-      {currentPage == options[1] && <p>Bonificaciones</p>}
-      {currentPage == options[2] && <p>Descuentos</p>}
+      {currentPage == options[1] && <BonificationsConfig bonifications={Config.bonifications} />}
+      {currentPage == options[2] && <DiscountsConfig discounts={Config.discounts} />}
+      {currentPage == options[3] && <FamilyConfig family={Config.family} />}
     </main>
   );
 }

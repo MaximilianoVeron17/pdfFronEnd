@@ -1,58 +1,41 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import styles from "./BonificationsTable.module.scss"
+import { BonificationsType, GlobalContext, GlobalContextType } from "../GlobalContext/GlobalContext";
+import { TableRow } from "./TableRow";
 
 export const BonificationsTable: FC = () => {
-  const tableRows = []
-  for (let index = 1; index <= 100; index++) {
-    tableRows.push(
-      <tr>
-        <td>{index}</td>
-        <td>
-          <input type="text" placeholder="Apellido" value={index < 10 ? 'Acosta' : ''} readOnly/>
-        </td>
-        <td>
-          <input type="text" placeholder="Nombre" value={'Facundo'} readOnly />
-        </td>
-        <td>
-          <input type="number" min={0} max={160} />
-        </td>
-        <td>
-          <div className={styles.checkbocContainer}>
-            <input className={styles.checkbox} type="checkbox" />
-          </div>
-        </td>
-        <td>
-          <div className={styles.checkbocContainer}>
-            <input className={styles.checkbox} type="checkbox"/>
-          </div>
-        </td>
-        <td>
-          <div className={styles.checkbocContainer}>
-            <input className={styles.checkbox} type="checkbox"/>
-          </div>
-        </td>
-        <td>
-          <div className={styles.checkbocContainer}>
-            <input className={styles.checkbox} type="checkbox" />
-          </div>
-        </td>
-      </tr>
-    )
+  const { Config, PersonalData, Bonifications, setBonifications } = useContext(GlobalContext) as GlobalContextType;
+  const saveRowInfo = (data: BonificationsType[0], index: number) => {
+    const newBonifications = [...Bonifications]
+    if (index < Bonifications.length) {
+      newBonifications[index] = data
+      setBonifications(newBonifications)
+    } else {
+      newBonifications.push(data)
+      setBonifications(newBonifications)
+    }
   }
+
   return (
     <>
       <thead className={styles.thead}>
         <th >N° Orden</th>
-        <th>Apellido</th>
+        <th>DNI</th>
         <th>Nombre</th>
         <th>Hs Extra</th>
-        <th>Insalubridad</th>
-        <th>R. de Vida</th>
-        <th>M. Dedic.</th>
-        <th>Dedic. Perm.</th>
+        <th>Mayor Dedicacion</th>
+        {Config.bonifications.fixedConcepts.map((value) => (
+          <th>{value.name}</th>
+          ))}
+        {Config.bonifications.proportionalConcepts.map((value) => (
+          <th>{value.name}</th>
+          ))}
+        <th>Guardar</th>
       </thead>
       <tbody className={styles.tbody}>
-        {tableRows}
+        {PersonalData.map((data, index) => (
+          <TableRow data={data} index={index} Config={Config} />
+        ))}
       </tbody>
     </>
   )

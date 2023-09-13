@@ -3,7 +3,7 @@ import styles from "./DiscountsTable.module.scss";
 
 export const DiscountsTable: FC = () => {
   const tableRows = []
-  for (let index = 1; index <= 100; index++) {
+  for (let index = 1; index <= 150; index++) {
     tableRows.push(
       <tr>
         <td>{index}</td>

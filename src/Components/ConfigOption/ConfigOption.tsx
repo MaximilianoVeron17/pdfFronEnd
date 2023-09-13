@@ -3,12 +3,13 @@ import styles from "./ConfigOption.module.scss"
 
 interface IConfigOption {
   name: string;
-  handleOnChange: () => void
+  active: boolean;
+  handleOnChange: () => void;
 }
 
-export const ConfigOtion: FC<IConfigOption> = ({name, handleOnChange}) => {
+export const ConfigOtion: FC<IConfigOption> = ({ name, active, handleOnChange }) => {
   return (
-    <a className={styles["nav-link-name"]} onClick={() => handleOnChange()}>
+    <a className={`${styles["nav-link-name"]} ${active ? styles.active: ''}`} onClick={() => handleOnChange()}>
       {name}
     </a>
   )

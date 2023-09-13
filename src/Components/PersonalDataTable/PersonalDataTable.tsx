@@ -1,45 +1,27 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
+import { GlobalContext, GlobalContextType, PersonalDataType } from "../GlobalContext/GlobalContext";
 import styles from "./PersonalDataTable.module.scss"
+import { TableRow } from "./TableRow";
+
 
 export const PersonalDataTable: FC = () => {
-  const categorias = ['1', '2', '3', '4', '10']
-  const tableRows = []
-  for (let index = 1; index <= 100; index++) {
-    tableRows.push(
-      <tr>
-        <td>{index}</td>
-        <td>
-          <input type="number" min={0} max={99999999} placeholder="N° DNI" />
-        </td>
-        <td>
-          <input type="text" placeholder="Apellido" />
-        </td>
-        <td>
-          <input type="text" placeholder="Nombre" />
-        </td>
-        <td>
-          <input type="text" placeholder="Cargo" />
-        </td>
-        <td className={styles.categoryContainer}>
-          <select className={styles.categoryOptions} name="" id="">
-            {categorias.map((categoria, index) => {
-              return (
-                <option key={index} value={`Categoria ${categoria}`}>Categoria {categoria}</option>
-              )
-            })}
-          </select>
-        </td>
-        <td>
-          <input className={styles.fechaIngreso} type="date" placeholder="Fecha Ingreso" />
-        </td>
-        <td >
-          <div className={styles.checkbocContainer}>
-            <input type="checkbox" />
-          </div>
-        </td>
-      </tr>
-    )
+
+  const { Config, PersonalData, setPersonalData } = useContext(GlobalContext) as GlobalContextType;
+  const saveRowInfo = (data: PersonalDataType[0], index: number) => {
+    const newPersonalData = [...PersonalData]
+    if (index < PersonalData.length) {
+      newPersonalData[index] = data
+      setPersonalData(newPersonalData)
+    } else {
+      newPersonalData.push(data)
+      setPersonalData(newPersonalData)
+    }   
   }
+  const tableRows = []
+  for (let index = 0; index < 150; index++) {
+    tableRows.push(<TableRow Config={Config} index={index} saveRowInfo={saveRowInfo} />)
+  }
+
   return(
     <>
       <thead className={styles.thead}>
@@ -51,6 +33,7 @@ export const PersonalDataTable: FC = () => {
         <th>Categoria</th>
         <th>Fecha Ingreso</th>
         <th>Titulo</th>
+        <th>Guardar</th>
       </thead>
       <tbody className={styles.tbody}>
         {tableRows}

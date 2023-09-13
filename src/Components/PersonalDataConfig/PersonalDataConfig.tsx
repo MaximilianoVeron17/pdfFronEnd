@@ -1,26 +1,26 @@
 import { FC, useState } from "react";
 import { ConfigType } from "../GlobalContext/GlobalContext";
 import { CategoriesTab } from "./Tabs/CategoriesTab";
+import { AntiquityTab } from "./Tabs/AntiquityTab";
+import { DegreesTab } from "./Tabs/DegreesTabs";
+import { PositionsTab } from "./Tabs/PositionsTab";
+import styles from "./PersonalDataConfig.module.scss"
 
 export const PersonalDataConfig: FC<{ personalData: ConfigType['personalData'], bonuses: ConfigType['bonifications']['chargeBonuses'] }> = ({ personalData, bonuses }) => {
   const [currentTab, setCurrentTab] = useState('Categorias')
-  const { title, positions, antiquity, categorys } = personalData
   return(
-    <div>
-      <h2>Personal Data Config</h2>
-      <div>
-        <div style={{display: 'flex'}}>
-          <a onClick={() => setCurrentTab('Categorias')}>Categorias</a>
-          <a onClick={() => setCurrentTab('Antiguedad')}>Antiguedad</a>
-          <a onClick={() => setCurrentTab('Titulos')}>Titulos</a>
-          <a onClick={() => setCurrentTab('Posiciones')}>Posiciones</a>
-        </div>
-        <div>
-          {currentTab == 'Categorias' && <CategoriesTab categorias={categorys} bonuses={bonuses}/>}
-          {currentTab == 'Antiguedad' && <p>Antiguedad</p>}
-          {currentTab == 'Titulos' && <p>Titulos</p>}
-          {currentTab == 'Posiciones' && <p>Posiciones</p>}
-        </div>
+    <div className={styles.personalDataConfig}>
+      <div className={styles.header}>
+        <a className={`${styles.tab} ${currentTab == 'Categorias' ? styles.active : ''}`} onClick={() => setCurrentTab('Categorias')}>Categorias</a>
+        <a className={`${styles.tab} ${currentTab == 'Antiguedad' ? styles.active : ''}`} onClick={() => setCurrentTab('Antiguedad')}>Antiguedad</a>
+        <a className={`${styles.tab} ${currentTab == 'Titulos' ? styles.active : ''}`} onClick={() => setCurrentTab('Titulos')}>Titulos</a>
+        <a className={`${styles.tab} ${currentTab == 'Posiciones' ? styles.active : ''}`} onClick={() => setCurrentTab('Posiciones')}>Posiciones</a>
+      </div>
+      <div className={styles.tabsContainer}>
+        {currentTab == 'Categorias' && <CategoriesTab categorias={personalData.categorys} bonuses={bonuses}/>}
+        {currentTab == 'Antiguedad' && <AntiquityTab antiquities={personalData.antiquity} />}
+        {currentTab == 'Titulos' && <DegreesTab degrees={personalData.title} />}
+        {currentTab == 'Posiciones' && <PositionsTab positions={personalData.positions}  />}
       </div>
     </div>
   )
