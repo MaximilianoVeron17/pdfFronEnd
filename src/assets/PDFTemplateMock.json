@@ -1,0 +1,65 @@
+{
+  "personalData": {
+    "lastName": "Acosta",
+    "firstName": "Facundo",
+    "charge": "Programador",
+    "fechaIngreso": "10/06/2021",
+    "dni": 40178822,
+    "category": "Categoria 2",
+    "antiguedad": "5 años"
+  },
+  "haberesYDescuentos": [
+    {
+      "haber": {
+        "name": "Sueldo Básico",
+        "value": 155000
+      },
+      "descuento": {
+        "name": "Aporte Jub. 11%",
+        "value": 20521.48
+      }
+    },
+    {
+      "haber": {
+        "name": "BONIFICACIÓN POR TITULO",
+        "value": 27725
+      },
+      "descuento": {
+        "name": "Aporte S.O.S.",
+        "value": 9327.95
+      }
+    },
+    {
+      "haber": {
+        "name": "Presentismo",
+        "value": 4433.91
+      },
+      "descuento": {
+        "name": "F.A. Complejidad 1%",
+        "value": 1965.59
+      }
+    },
+    {
+      "haber": {
+        "name": "Refrigerio",
+        "value": 3000
+      },
+      "descuento": {
+        "name": "F. Salud Publica 0,75%",
+        "value": 1399.19
+      }
+    },
+    {
+      "descuento": {
+        "name": "Seguro de Vida Obligatorio",
+        "value": 900
+      }
+    }
+  ],
+  "totals": {
+    "subTotal": 186558.91,
+    "hTotal": 186558.91,
+    "dTotal": 34014.21,
+    "netTotal": 155544.7
+  }
+}

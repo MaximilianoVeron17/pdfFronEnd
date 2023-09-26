@@ -1,0 +1,50 @@
+@import "./assets/variables.scss";
+
+:root {
+  background-color: $main-gray;
+  opacity: 0.8;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: "Syne";
+  font-display: swap;
+  src: local("SyneRegular"),
+    url("../src/fonts/Syne/Syne-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Nova Mono";
+  font-display: swap;
+  src: local("NovaMono-Regular"),
+    url("../src/fonts/Nova_Mono/NovaMono-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-display: swap;
+  src: local("MontserratAlternates-Bold"),
+    url("../src/fonts/Montserrat_Alternates/MontserratAlternates-Bold.ttf") format("truetype");
+  font-weight: bold;
+}

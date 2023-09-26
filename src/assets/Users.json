@@ -1,0 +1,310 @@
+{
+  "PersonalData": [
+    {
+      "id": 0,
+      "dni": 34941003,
+      "firstName": "Jose Maximiliano",
+      "lastName": "Alsina",
+      "charge": "Chofer",
+      "category": "Categoria 13",
+      "startDate": "2009-01-01",
+      "title": "Secundario(NOmenora5años)"
+    },
+    {
+      "id": 1,
+      "dni": 30554087,
+      "firstName": "Osvaldo Oscar",
+      "lastName": "Fernandez",
+      "charge": "Chofer",
+      "category": "Categoria 11",
+      "startDate": "2007-01-01",
+      "title": "Secundario(NOmenora3años)"
+    },
+    {
+      "id": 2,
+      "dni": 22405839,
+      "firstName": "Sergio Pablo",
+      "lastName": "Phipps",
+      "charge": "Intendente",
+      "category": "Intendente",
+      "startDate": "1996-01-01",
+      "title": "Universitario"
+    }
+  ],
+  "Bonifications": [
+    {
+      "hsExtra": 10,
+      "medDedication": 0,
+      "fixedConcepts": [
+        {
+          "name": "Riesgo de Caja",
+          "value": false
+        },
+        {
+          "name": "Presentismo",
+          "value": true
+        }
+      ],
+      "proportionalConcepts": [
+        {
+          "name": "Insalubridad",
+          "value": false
+        },
+        {
+          "name": "Riesgo de Vida",
+          "value": true
+        },
+        {
+          "name": "Dedicacion Permanente",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hsExtra": 20,
+      "medDedication": 0,
+      "fixedConcepts": [
+        {
+          "name": "Riesgo de Caja",
+          "value": false
+        },
+        {
+          "name": "Presentismo",
+          "value": true
+        }
+      ],
+      "proportionalConcepts": [
+        {
+          "name": "Insalubridad",
+          "value": true
+        },
+        {
+          "name": "Riesgo de Vida",
+          "value": true
+        },
+        {
+          "name": "Dedicacion Permanente",
+          "value": false
+        }
+      ]
+    },
+    {
+      "hsExtra": 10,
+      "medDedication": 0,
+      "fixedConcepts": [
+        {
+          "name": "Riesgo de Caja",
+          "value": false
+        },
+        {
+          "name": "Presentismo",
+          "value": true
+        }
+      ],
+      "proportionalConcepts": [
+        {
+          "name": "Insalubridad",
+          "value": false
+        },
+        {
+          "name": "Riesgo de Vida",
+          "value": false
+        },
+        {
+          "name": "Dedicacion Permanente",
+          "value": true
+        }
+      ]
+    }
+  ],
+  "Discounts": [
+    {
+      "inasistency": 0,
+      "fixedConcepts": [
+        {
+          "name": "Seguro Obligatorio",
+          "value": true
+        },
+        {
+          "name": "Seguro Opcional",
+          "value": false
+        },
+        {
+          "name": "Seguro Familiar",
+          "value": true
+        }
+      ],
+      "proportionalConcepts": [
+        {
+          "name": "Jubilacion",
+          "value": true
+        },
+        {
+          "name": "Obra Social",
+          "value": true
+        },
+        {
+          "name": "Alta Complejidad",
+          "value": false
+        },
+        {
+          "name": "FSP",
+          "value": true
+        }
+      ]
+    },
+    {
+      "inasistency": 0,
+      "fixedConcepts": [
+        {
+          "name": "Seguro Obligatorio",
+          "value": true
+        },
+        {
+          "name": "Seguro Opcional",
+          "value": false
+        },
+        {
+          "name": "Seguro Familiar",
+          "value": false
+        }
+      ],
+      "proportionalConcepts": [
+        {
+          "name": "Jubilacion",
+          "value": true
+        },
+        {
+          "name": "Obra Social",
+          "value": true
+        },
+        {
+          "name": "Alta Complejidad",
+          "value": false
+        },
+        {
+          "name": "FSP",
+          "value": true
+        }
+      ]
+    },
+    {
+      "inasistency": 0,
+      "fixedConcepts": [
+        {
+          "name": "Seguro Obligatorio",
+          "value": true
+        },
+        {
+          "name": "Seguro Opcional",
+          "value": false
+        },
+        {
+          "name": "Seguro Familiar",
+          "value": true
+        }
+      ],
+      "proportionalConcepts": [
+        {
+          "name": "Jubilacion",
+          "value": true
+        },
+        {
+          "name": "Obra Social",
+          "value": true
+        },
+        {
+          "name": "Alta Complejidad",
+          "value": true
+        },
+        {
+          "name": "FSP",
+          "value": true
+        }
+      ]
+    }
+  ],
+  "Family": [
+    {
+      "fixedConcepts": [
+        {
+          "name": "Conyugue",
+          "value": true
+        },
+        {
+          "name": "Familia Numerosa",
+          "value": true
+        },
+        {
+          "name": "Refrigerio",
+          "value": true
+        }
+      ],
+      "proportionalConcepts": [],
+      "acumulativeConcepts": [
+        {
+          "name": "Hijo",
+          "value": 2
+        },
+        {
+          "name": "Escolaridad Primaria",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fixedConcepts": [
+        {
+          "name": "Conyugue",
+          "value": true
+        },
+        {
+          "name": "Familia Numerosa",
+          "value": false
+        },
+        {
+          "name": "Refrigerio",
+          "value": true
+        }
+      ],
+      "proportionalConcepts": [],
+      "acumulativeConcepts": [
+        {
+          "name": "Hijo",
+          "value": 0
+        },
+        {
+          "name": "Escolaridad Primaria",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fixedConcepts": [
+        {
+          "name": "Conyugue",
+          "value": false
+        },
+        {
+          "name": "Familia Numerosa",
+          "value": false
+        },
+        {
+          "name": "Refrigerio",
+          "value": true
+        }
+      ],
+      "proportionalConcepts": [],
+      "acumulativeConcepts": [
+        {
+          "name": "Hijo",
+          "value": 1
+        },
+        {
+          "name": "Escolaridad Primaria",
+          "value": 1
+        }
+      ]
+    }
+  ]
+}
